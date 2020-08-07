@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Section Name="Serilog">
+  <Parameter Name="Using:0" Value="Serilog.Sinks.File" />
+  <Parameter Name="Using:1" Value="Sbux.Formatting.Json" />
+  <Parameter Name="MinimumLevel:Default" Value="Information" />
+  <Parameter Name="MinimumLevel:Override:Microsoft" Value="Warning" />
+  <Parameter Name="MinimumLevel:Override:System" Value="Warning" />
+  <Parameter Name="MinimumLevel:Override:NServiceBus" Value="Information" />
+  <Parameter Name="WriteTo:0:Name" Value="File" />
+  <Parameter Name="WriteTo:0:Args:formatter" Value="Sbux.Formatting.Json.Datadog.JsonFormatter, Sbux.Formatting.Json" />
+  <Parameter Name="WriteTo:0:Args:path" Value="logs\endpoint.log" />
+  <Parameter Name="WriteTo:0:Args:restrictedToMinimumLevel" Value="Information" />
+  <Parameter Name="WriteTo:0:Args:rollingInterval" Value="Day" />
+  <Parameter Name="WriteTo:0:Args:buffered" Value="false" />
+  <Parameter Name="WriteTo:0:Args:shared" Value="true" />
+  <Parameter Name="WriteTo:0:Args:fileSizeLimitBytes" Value="1073741824" />
+  <Parameter Name="WriteTo:0:Args:rollOnFileSizeLimit" Value="true" />
+  <Parameter Name="WriteTo:0:Args:retainedFileCountLimit" Value="31" />
+  <Parameter Name="Enrich:0:Name" Value="FromLogContext" />
+  <Parameter Name="Enrich:1:Name" Value="WithMachineName" />
+  <Parameter Name="Enrich:2:Name" Value="WithEnvironmentUserName" />
+  <Parameter Name="Enrich:3:Name" Value="WithThreadId" />
+  <Parameter Name="Enrich:4:Name" Value="WithProcessId" />
+  <Parameter Name="Properties:service" Value="endpoint" />
+  <Parameter Name="Properties:application" Value="app" />
+</Section>

@@ -1,0 +1,24 @@
+{
+  "inputs": [
+    {
+      "type": "Serilog"
+    }
+  ],
+  "filters": [
+  ],
+  "outputs": [
+    {
+      "type": "StdOutput"
+    }
+  ],
+  "schemaVersion": "2016-08-11",
+  "settings": {
+    "pipelineBufferSize": "10000",
+    "maxEventBatchSize": "1000",
+    "maxBatchDelayMsec": "5000",
+    "maxConcurrency": "1",
+    "pipelineCompletionTimeoutMsec": "30000"
+  },
+  "extensions": [
+  ]
+}
